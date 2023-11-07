@@ -18,6 +18,8 @@ Khai Nguyen TimeKeeping App for all employees of Khai Nguyen General Clinic.
 
 # Technologies/Librariess embedding to Flutter.
 - Flutter (3.7.12).
+- Dart 2.19.6
+- DevTools 2.20.1
 - Firebase.
 - RestAPI
 - Unit Test.
