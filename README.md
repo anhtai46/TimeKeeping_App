@@ -27,4 +27,4 @@ Khai Nguyen TimeKeeping App for all employees of Khai Nguyen General Clinic.
 
 # This is a private repository. Discuss with others before add anyone to this repository!!! (Notify with [anhtai46](https://github.com/anhtai46))
 
-![This is an alt text.](https://i.pinimg.com/originals/8e/72/41/8e7241f520fe4a91394ae3c8cb41612a.gif "This is a image funny")
+<img src="https://i.pinimg.com/originals/8e/72/41/8e7241f520fe4a91394ae3c8cb41612a.gif" alt="Funny image" width="500"/>
