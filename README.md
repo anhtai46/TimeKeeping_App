@@ -1,16 +1,28 @@
-# time_tracking_app
+# Capstone - TimeKeeping App - Khai Nguyen Polyclinic
 
-A new Flutter project.
+Khai Nguyen TimeKeeping App for all employees of Khai Nguyen General Clinic.
 
-## Getting Started
+# Overview
+- Our project aims to create a custom database software to handle the Pharmacy and Personnel Management System for Khai Nguyen General Clinic.
+- The app name is Khai Nguyen TimeKeeping.
+- This application will help the clinic modernize employee timekeeping, while ensuring efficiency and quality in these areas. We are delighted to work closely with Khai Nguyen General Clinic to develop a solution tailored to the hospital's specific needs and goals. This application will enable clinic staff to maintain high standards of medical care for patients, while improving internal processes.
+- ### ***This is a grudation capstone as well.***
 
-This project is a starting point for a Flutter application.
+# The way of working on repository!!
+- Create branch with format AP_[name user]_[Ticket number on Jara]. ***EX: AP_anhtai46_2339.***
+- Main branch will be pushed new code of feature in the end of sprint (after get review OK from PM).
+- If need any tool, libraries, please merge into main branch (don't create new branch).
+- Any account for server, fummy account for login,...please notify PM, BE and put in README file.
+- Any new branch must checkout from main (master) branch.
+- After each sprint, pull new code to master at local before checkout new branch.
 
-A few resources to get you started if this is your first Flutter project:
+# Technologies/Librariess embedding to Flutter.
+- Flutter (3.7.12).
+- Firebase.
+- RestAPI
+- Unit Test.
+- Another libraries of Flutter support.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# This is a private repository. Discuss with others before add anyone to this repository!!! (Notify with [anhtai46](https://github.com/anhtai46))
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![This is an alt text.](https://i.pinimg.com/originals/8e/72/41/8e7241f520fe4a91394ae3c8cb41612a.gif "This is a image funny")
