@@ -7,10 +7,14 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:month_year_picker/month_year_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'firebase_options.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
-    await Firebase.initializeApp();
+   await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   } catch (e) {
     print('Error during Firebase initialization: $e');
   }

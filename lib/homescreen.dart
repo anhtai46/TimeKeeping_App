@@ -40,7 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _getCredentials() async {
     try {
-      DocumentSnapshot doc = await FirebaseFirestore.instance.collection("Employee").doc(User.id).get();
+      DocumentSnapshot doc = await FirebaseFirestore.instance
+          .collection("Employee")
+          .doc(User.id)
+          .get();
       setState(() {
         User.canEdit = doc['canEdit'];
         User.firstName = doc['firstName'];
@@ -48,16 +51,35 @@ class _HomeScreenState extends State<HomeScreen> {
         User.birthDate = doc['birthDate'];
         User.address = doc['address'];
       });
-    } catch(e) {
+    } catch (e) {
       return;
     }
   }
 
   void _getProfilePic() async {
-    DocumentSnapshot doc = await FirebaseFirestore.instance.collection("Employee").doc(User.id).get();
-    setState(() {
-      User.profilePicLink = doc['profilePic'];
-    });
+    DocumentSnapshot doc = await FirebaseFirestore.instance
+        .collection("Employee")
+        .doc(User.id)
+        .get();
+
+    if (doc.exists) {
+      // Cast doc.data() to Map<String, dynamic>
+      Map<String, dynamic>? data = doc.data() as Map<String, dynamic>?;
+
+      // Check if data is not null and contains the 'profilePic' key
+      if (data != null && data.containsKey('profilePic')) {
+        // Update the profilePicLink if the field exists
+        setState(() {
+          User.profilePicLink = data['profilePic'];
+        });
+      } else {
+        // Handle the case where the 'profilePic' field is not present
+        print("The 'profilePic' field does not exist in the document");
+      }
+    } else {
+      // Handle the case where the document does not exist
+      print("Document does not exist for user with ID: ${User.id}");
+    }
   }
 
   void _startLocationService() async {
@@ -82,9 +104,14 @@ class _HomeScreenState extends State<HomeScreen> {
         .where('id', isEqualTo: User.employeeId)
         .get();
 
-    setState(() {
-      User.id = snap.docs[0].id;
-    });
+    if (snap.docs.isNotEmpty) {
+      setState(() {
+        User.id = snap.docs[0].id;
+      });
+    } else {
+      // Handle the case where no documents are found
+      print("No documents found for employeeId: ${User.employeeId}");
+    }
   }
 
   @override
@@ -125,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              for(int i = 0; i < navigationIcons.length; i++)...<Expanded>{
+              for (int i = 0; i < navigationIcons.length; i++) ...<Expanded>{
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
@@ -143,18 +170,22 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Icon(
                               navigationIcons[i],
-                              color: i == currentIndex ? primary : Colors.black54,
+                              color:
+                                  i == currentIndex ? primary : Colors.black54,
                               size: i == currentIndex ? 30 : 26,
                             ),
-                            i == currentIndex ? Container(
-                              margin: const EdgeInsets.only(top: 6),
-                              height: 3,
-                              width: 22,
-                              decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.all(Radius.circular(40)),
-                                color: primary,
-                              ),
-                            ) : const SizedBox(),
+                            i == currentIndex
+                                ? Container(
+                                    margin: const EdgeInsets.only(top: 6),
+                                    height: 3,
+                                    width: 22,
+                                    decoration: BoxDecoration(
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(40)),
+                                      color: primary,
+                                    ),
+                                  )
+                                : const SizedBox(),
                           ],
                         ),
                       ),

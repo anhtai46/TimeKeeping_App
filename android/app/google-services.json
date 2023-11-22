@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "736622088680",
+    "project_id": "attendance-app-f7648",
+    "storage_bucket": "attendance-app-f7648.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736622088680:android:63af5bc08697c3d756945d",
+        "android_client_info": {
+          "package_name": "com.example.time_tracking_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyiSfRo3YMa-Kj3synq6Lg-N6CK9M2N6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
