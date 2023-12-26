@@ -1,4 +1,4 @@
-# Capstone - TimeKeeping App - Khai Nguyen Polyclinic
+# Capstone - TimeKeeping App - Khai Nguyen Polyclinic (CANCEL!!!)
 
 Khai Nguyen TimeKeeping App for all employees of Khai Nguyen General Clinic.
 
